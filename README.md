@@ -1,7 +1,3 @@
-# Doomed_ida
-
-Binary diddle-doodle in Doom Emacs
-
 ## Components
 
 - emacs/ — Doom Emacs helpers
@@ -21,5 +17,5 @@ make install-el
 
 ## Emacs
 
-M-x doomed-ida-hex-dec
+M-x doomed-ida-hex-dec \
 M-x doomed-ida-arch-file
