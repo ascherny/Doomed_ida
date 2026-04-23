@@ -9,13 +9,15 @@
 make build
 make install
 ```
-or separately:
-``` bash
-make install-bin
-make install-el
-```
 
 ## Emacs
+Add one line to your config:
 
-M-x doomed-ida-hex-dec \
+```elisp
+(load "/absolute/path/to/Doomed_ida/emacs/doomed-ida-init.el")
+```
+
+Then use:
+
+M-x doomed-ida-hex-dec
 M-x doomed-ida-arch-file

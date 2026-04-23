@@ -27,6 +27,6 @@ fn main() -> Result<(), Box<dyn std::error::Error>> {
         FileType::PE => "PE".to_string(),
         FileType::Another => "Another format".to_string(),
     };
-    println!("file {} is {}", file_name, arch);
+    println!("\"{}\": {}", file_name, arch);
     Ok(())
 }
