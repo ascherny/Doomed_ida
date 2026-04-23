@@ -19,5 +19,5 @@ Add one line to your config:
 
 Then use:
 
-M-x doomed-ida-hex-dec
+M-x doomed-ida-hex-dec \
 M-x doomed-ida-arch-file
