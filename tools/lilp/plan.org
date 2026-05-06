@@ -1,0 +1,39 @@
+#+title: Plan
+
+| Модуль         | Описание                                      |
+| -------------- | -----------------------                       |
+| `loader`       | Загрузка файла в память изолируем I/O         |
+| `byteview`     | Работа с байтами (ядро)  контроль над памятью |
+| `format`       | Определение формата     единая точка входа    |
+| `elf`          | Парсинг ELF                                   |
+| `pe`           | Парсинг PE                                    |
+| `macho`        | Парсинг Mach-O                                |
+| `common`       | Общие структуры                               |
+| `error`        | Ошибки                                        |
+| `main`         | точка сборки                                  |
+
+
+
+src/
+ ├── main.rs
+ ├── loader.rs
+ ├── byteview.rs
+ ├── format.rs
+ ├── common.rs
+ ├── error.rs
+ ├── elf.rs
+ ├── pe.rs
+ └── macho.rs
+
+ loader → byteview → format → (elf | pe | macho)
+                        ↓
+                     common
+                        ↓
+                      error
+
+1. loader: читаем файл → Vec<u8>
+2. byteview: оборачиваем &[u8]
+3. format: определяем тип
+4. создаем конкретный парсер (elf/pe/macho)
+5. парсим header
+6. дальше lazy parsing

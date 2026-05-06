@@ -1,7 +1,7 @@
 BIN_DIR = target/release
 INSTALL_DIR = $(HOME)/.local/bin
 
-TOOLS = lil_parser
+TOOLS = lilp
 
 build:
 	cargo build --release

@@ -1,4 +1,4 @@
 [workspace]
 members = [
-    "tools/lil_parser"
+    "tools/lilp"
 ]

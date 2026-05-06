@@ -1,5 +1,5 @@
 [package]
-name = "lil_parser"
+name = "lilp"
 version = "0.1.0"
 edition = "2024"
 

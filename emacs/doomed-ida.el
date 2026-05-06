@@ -8,7 +8,7 @@
   "Binary helpers."
   :group 'tools)
 
-(defcustom doomed-ida-binary "lil_parser"
+(defcustom doomed-ida-binary "lilp"
   "Executable used for architecture parsing."
   :type 'string
   :group 'doomed-ida)
@@ -36,15 +36,14 @@
 
 ;;;###autoload
 (defun doomed-ida-arch-file ()
-  "Run lil_parser and insert architecture info."
+  "Run lilp and insert architecture info as org block."
   (interactive)
   (let* ((file (read-file-name "Binary: "))
-         (bin (doomed-ida--binary)))
-    (insert
-     (with-temp-buffer
-       (call-process bin nil t nil file)
-       (string-trim (buffer-string))))))
-
+         (bin  (doomed-ida--binary))
+         (output (with-temp-buffer
+                   (call-process bin nil t nil file)
+                   (string-trim (buffer-string)))))
+    (insert (format "#+begin_example\n%s\n#+end_example\n" output))))
 
 (provide 'doomed-ida)
 ;;; doomed-ida.el ends here
